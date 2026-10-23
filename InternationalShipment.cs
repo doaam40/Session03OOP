@@ -39,6 +39,10 @@ namespace Session03_AssignmentOOP
             }
         }
         public override decimal EstimatedCost => DeliveryFee + (decimal)(Weight * 5) + CustomsFee;
+        public virtual void GenerateCustomsReport()
+        {
+
+        }
         
         public override string ToString()
         {
