@@ -23,6 +23,12 @@
             // c) no, because the keyword sealed when applied to method so it prevents the method from overriding in any child
             #endregion
             #endregion
+
+            #region Part 02 — Practical
+            #region Q1
+
+            #endregion
+            #endregion
         }
     }
 }
