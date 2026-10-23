@@ -43,7 +43,10 @@ namespace Session03_AssignmentOOP
         {
 
         }
-        
+        public override void PrintShipment()
+        {
+            Console.WriteLine($"International Shipment: Tracking Code: {TrackingCode}, Description: {Description}, Weight: {Weight} KG, Delivery Fee: {DeliveryFee} EGP, Destination Country: {DestinationCountry}, Customs Fee: {customsFee}, Estimated Cost: {EstimatedCost} EGP");
+        }
         public override string ToString()
         {
             return $"International Shipment: Tracking Code: {TrackingCode}, Description: {Description}, Weight: {Weight} KG, Delivery Fee: {DeliveryFee} EGP, Destination Country: {DestinationCountry}, Customs Fee: {customsFee}, Estimated Cost: {EstimatedCost} EGP";
