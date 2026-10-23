@@ -10,6 +10,7 @@ namespace Session03_AssignmentOOP
         {
 
         }
+        public override decimal EstimatedCost => base.EstimatedCost;
         
         public override string ToString()
         {
