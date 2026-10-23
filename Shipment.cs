@@ -92,15 +92,23 @@ namespace Session03_AssignmentOOP
         {
             return $"Tracking Code: {TrackingCode}, Description: {Description}, Weight: {Weight} KG, Delivery Fee: {DeliveryFee} EGP, Destination: {Destination.BuildingNumber} {Destination.Street} Street, {Destination.City}, Estimated Cost: {EstimatedCost} EGP";
         }
-        public void UpdateWeight(double weight)
+        public double UpdateWeight(double weight)
         {
             if (weight > 0)
+            {
                 Weight = weight;
+                return Weight;
+            }
+            return default;
         }
-        public void UpdateWeight(double weight, double packing)
+        public double UpdateWeight(double weight, double packing)
         {
             if (weight > 0 && packing > 0)
+            {
                 Weight = weight + packing;
+                return Weight;
+            }
+            return default;
         }
     }
 }

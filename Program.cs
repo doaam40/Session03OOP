@@ -57,6 +57,50 @@
 
             #endregion
 
+            #region Q9
+            Console.WriteLine("Delivery Center");
+            Console.Write("Driver: ");
+            string driver = Console.ReadLine();
+
+            DeliveryCenter deliveryCenter = new DeliveryCenter();
+
+            StandardShipment standard = new StandardShipment("sh001", "Laptop", 3, 80, new DeliveryAddress("Cairo", "Tahrir", 3));
+            ExpressShipment express = new ExpressShipment("sh002", "Mobile Phone", 2, 60, new DeliveryAddress("Alex", "Manzla", 6), 30);
+            InternationalShipment international = new InternationalShipment("sh003", "Television", 8, 120, new DeliveryAddress("Giza", "Haram", 9), 100, "Germany");
+
+            Shipment[] ship = { standard, express, international };
+
+            for (int i = 0; i < 3; i++)
+            {
+                bool shipmentAdded = deliveryCenter.AddShipment(ship[i], i);
+                string printStatus = shipmentAdded ? "The shipment was added successfully" : "The delivery center is full";
+                Console.WriteLine(printStatus);
+            }
+            deliveryCenter.PrintAllShipments();
+
+            Console.WriteLine("Printing Using DeliveryHelper");
+            for (int i = 0; i < 3; i++)
+            {
+                DeliveryHelper.PrintShipmentDetails(deliveryCenter[i]);
+            }
+
+            Console.WriteLine("Updating Weight");
+            Console.WriteLine($"Original Weight: {standard.Weight} KG");
+            Console.Write($"Updated Weight: {standard.UpdateWeight(5)} KG");
+            Console.Write($"Updated Weight After Packing: {standard.UpdateWeight(5, 0.5)} KG");
+
+            Console.WriteLine("Printing Using Shipment[]");
+            Shipment[] holding = { standard, express, international };
+            foreach (Shipment s in holding)
+            {
+                s.PrintShipment();
+            }
+
+            //CompletedShipment class can not be inherit beause it is a sealed class
+            //GenerateCustomsReport method can not be override in any child because it is a sealed method
+
+            #endregion
+
             #endregion
         }
     }
