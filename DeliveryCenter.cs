@@ -67,7 +67,7 @@ namespace Session03_AssignmentOOP
         {
             foreach (Shipment ship in shipment)
             {
-                Console.WriteLine(ship);
+                ship.PrintShipment();
             }
         }
     }
